@@ -113,8 +113,8 @@ def feedback(save_id, is_satisfied):
 
 
 def query(sql):
-    con = pymysql.connect(host='swe3032-41.cvjht8t9uwzy.ap-northeast-2.rds.amazonaws.com', user='root',
-                          password='vmfhwprxmdlsrhdwlsmd',
+    con = pymysql.connect(host='#', user='root',
+                          password='#',
                           db='main', charset='utf8')
     with con:
         with con.cursor() as cur:
