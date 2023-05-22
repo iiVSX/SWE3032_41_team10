@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SWE3032-41 Team10</title>
+</head>
+<body>
+  <h2>[SWE3032-41] Music Recommendation System Based On Current Sentiment</h2>
+  <form id="save-result" action="/save" method="post">
+      <input type="hidden" name="id" value="{{id}}">
+  </form>
+    <table>
+        <tr>
+            <td>Music Title</td>
+            <td>{{title}}</td>
+        </tr>
+        <tr>
+            <td>Similarity</td>
+            <td>{{similarity}}%</td>
+        </tr>
+        <tr>
+            <td>Are you Satisfied with recommendation?</td>
+            <td>
+                <select name="is_satisfied" form="save-result">
+                    <option value="true">Y</option>
+                    <option value="false">N</option>
+                </select>
+                <input type="submit" value="Submit" form="save-result" onclick="alert('Thank you for your participation!')"/>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
