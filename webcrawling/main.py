@@ -6,14 +6,13 @@ import time
 
 
 # 웹 크롤링 하기
-def webcrawling(url, label, one_page=False):
+def webcrawling(url, one_page=False):
 
     # 데이터 형식 정의
     df = pd.DataFrame(
         columns=[
             'title',  # 제목
             'lyric',  # 가사
-            'label'   # 라벨
         ]
     )
 
@@ -43,7 +42,6 @@ def webcrawling(url, label, one_page=False):
             if song_idx >= len(songs):
                 break
             song = songs[song_idx]
-
             print('\rwebcrawling: ' + str(song_cnt), end='')
             song_cnt += 1
             song.click()
@@ -65,7 +63,7 @@ def webcrawling(url, label, one_page=False):
             song_lyric = song_lyric.text.replace('\n', '').replace('\t', '')
 
             # 정보 추가
-            df.loc[len(df)] = [song_title, song_lyric, label]
+            df.loc[len(df)] = [song_title, song_lyric]
 
 
             # 뒤로 가기
@@ -80,23 +78,32 @@ def webcrawling(url, label, one_page=False):
     return df
 
 
-happiness_songs_url = "https://www.melon.com/m6/landing/djplayList.htm?type=djc&plylstSeq=429411613#params%5BplylstSeq%5D=429411613&po=pageObj&startIndex="
-happiness_data = webcrawling(url=happiness_songs_url, label='happiness')
+# songs_url = "https://www.melon.com/mymusic/dj/mymusicdjplaylistview_inform.htm?plylstSeq=521849384#params%5BplylstSeq%5D=521849384&po=pageObj&startIndex="
+# total_data = webcrawling(url=songs_url, one_page=False)
+# total_data.to_csv('21.csv', encoding='utf-8')
 
-sadness_songs_url = "https://www.melon.com/mymusic/dj/mymusicdjplaylistview_inform.htm?plylstSeq=422168373#params%5BplylstSeq%5D=422168373&po=pageObj&startIndex="
-sadness_data = webcrawling(url=sadness_songs_url, label='sadness')
+file1 = pd.read_csv('1.csv', encoding='utf-8')
+file2 = pd.read_csv('2.csv', encoding='utf-8')
+file3 = pd.read_csv('3.csv', encoding='utf-8')
+file4 = pd.read_csv('4.csv', encoding='utf-8')
+file5 = pd.read_csv('5.csv', encoding='utf-8')
+file6 = pd.read_csv('6.csv', encoding='utf-8')
+file7 = pd.read_csv('7.csv', encoding='utf-8')
+file8 = pd.read_csv('8.csv', encoding='utf-8')
+file9 = pd.read_csv('9.csv', encoding='utf-8')
+file10 = pd.read_csv('10.csv', encoding='utf-8')
+file11 = pd.read_csv('11.csv', encoding='utf-8')
+file12 = pd.read_csv('12.csv', encoding='utf-8')
+file13 = pd.read_csv('13.csv', encoding='utf-8')
+file14 = pd.read_csv('14.csv', encoding='utf-8')
+file15 = pd.read_csv('15.csv', encoding='utf-8')
+file16 = pd.read_csv('16.csv', encoding='utf-8')
+file17 = pd.read_csv('17.csv', encoding='utf-8')
+file18 = pd.read_csv('18.csv', encoding='utf-8')
+file19 = pd.read_csv('19.csv', encoding='utf-8')
+file20 = pd.read_csv('20.csv', encoding='utf-8')
+file21 = pd.read_csv('21.csv', encoding='utf-8')
 
-fear_songs_url = "https://www.melon.com/m6/landing/djplayList.htm?type=djc&plylstSeq=422618235#params%5BplylstSeq%5D=422618235&po=pageObj&startIndex="
-fear_data = webcrawling(url=fear_songs_url, label='fear')
 
-neutral_songs_url = "https://www.melon.com/mymusic/dj/mymusicdjplaylistview_inform.htm?plylstSeq=490041450&memberKey=&ref=copyurl&snsGate=Y"
-neutral_data = webcrawling(url=neutral_songs_url, label='neutral', one_page=True)
-
-disgust_songs = "https://www.melon.com/mymusic/dj/mymusicdjplaylistview_inform.htm?plylstSeq=457536603&memberKey=&ref=copyurl&snsGate=Y#params%5BplylstSeq%5D=457536603&po=pageObj&startIndex="
-disgust_data = webcrawling(url=disgust_songs, label='disgust')
-
-anger_songs = "https://www.melon.com/mymusic/dj/mymusicdjplaylistview_inform.htm?plylstSeq=490101618#params%5BplylstSeq%5D=490101618&po=pageObj&startIndex="
-anger_data = webcrawling(url=anger_songs, label='anger', one_page=True)
-
-total_data = pd.concat([happiness_data, sadness_data, fear_data, neutral_data, disgust_data, anger_data])
-total_data.to_csv('song_data.csv', encoding='utf-8')
+total_data = pd.concat([file1, file2, file3, file4, file5, file6, file7, file8, file9, file10, file11, file12, file13, file14, file15, file16, file17, file18, file19, file20, file21])
+total_data.to_csv('song_data_new.csv', encoding="utf-8-sig")
