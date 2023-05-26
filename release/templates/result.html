@@ -19,11 +19,15 @@
             <td>{{similarity}}%</td>
         </tr>
         <tr>
+            <td>Label</td>
+            <td>{{label}}</td>
+        </tr>
+        <tr>
             <td>Are you Satisfied with recommendation?</td>
             <td>
                 <select name="is_satisfied" form="save-result">
-                    <option value="true">Y</option>
-                    <option value="false">N</option>
+                    <option value="1">Y</option>
+                    <option value="0">N</option>
                 </select>
                 <input type="submit" value="Submit" form="save-result" onclick="alert('Thank you for your participation!')"/>
             </td>
