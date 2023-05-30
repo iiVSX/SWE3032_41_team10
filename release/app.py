@@ -113,8 +113,8 @@ def feedback(save_id, is_satisfied):
 
 
 def get_connection():
-    con = pymysql.connect(host='swe3032-41.cvjht8t9uwzy.ap-northeast-2.rds.amazonaws.com', user='root',
-                          password='vmfhwprxmdlsrhdwlsmd',
+    con = pymysql.connect(host='#', user='#',
+                          password='#',
                           db='main', charset='utf8')
     return con
 
@@ -132,7 +132,7 @@ def query(con, sql):
 
 def load():
     model_directory = '/home/ubuntu/model'
-    pre_trained_model = ElectraForSequenceClassification.from_pretrained("monologg/koelectra-small-v3-discriminator", num_labels=7, local_files_only=False)
+    pre_trained_model = ElectraForSequenceClassification.from_pretrained(model_directory, num_labels=7, local_files_only=True)
     pre_trained_model.to(device)
 
     tokenizer_directory = '/home/ubuntu/tokenizer'
